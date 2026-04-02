@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+  app:
+    container_name: ENVIRONMENT-NAME-PROJECT-NAME
+    image: IMAGE-NAME:IMAGE-TAG
+    ports:
+      - P-MAPPING:5100
+    restart: unless-stopped
+    networks: 
+      - network-cesti
+    pull_policy: always
+
+networks:
+  network-cesti:
+    name: cesti-statistic-service-production
+    external: true
